@@ -14,19 +14,19 @@ public class TemplateController {
 	}
 	@GetMapping("/login")
 	
-	public String index()
+	public String login()
 	{
 		return "login.html";
 	}
 	@GetMapping("/profile")
 	
-	public String index()
+	public String profile()
 	{
 		return "profile.html";
 	}
 	@GetMapping("/register")
 	
-	public String index()
+	public String register()
 	{
 		return "register.html";
 	}

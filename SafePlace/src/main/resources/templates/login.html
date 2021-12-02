@@ -8,12 +8,12 @@
 </head>
 
 <body>
-
+	<th:block th:include="/menu"></th:block> 
     <header>
         <nav>
             <div class="brand"><a href=""><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;SafePlace</a></div>
             <ul>
-                <li><a href="/SafePlace/src/main/resources/templates/index.html">Home</a></li>
+                <li><a th:href="@{/index}">Home</a></li>
                 <li><a href="/SafePlace/src/main/resources/templates/login.html">Login</a></li>
                 <li><a href="/SafePlace/src/main/resources/templates/register.html">SignUp</a></li>
                 <li><a href="/SafePlace/src/main/resources/templates/profile.html">Profile</a></li>

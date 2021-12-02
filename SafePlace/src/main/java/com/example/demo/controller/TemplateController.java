@@ -30,4 +30,9 @@ public class TemplateController {
 	{
 		return "register.html";
 	}
+	@GetMapping ("/password")
+	public String password()
+	{
+		return "password.html";
+	}
 }

@@ -12,4 +12,22 @@ public class TemplateController {
 	{
 		return "index.html";
 	}
+	@GetMapping("/login")
+	
+	public String index()
+	{
+		return "login.html";
+	}
+	@GetMapping("/profile")
+	
+	public String index()
+	{
+		return "profile.html";
+	}
+	@GetMapping("/register")
+	
+	public String index()
+	{
+		return "register.html";
+	}
 }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="style.css">
+<title>Profile</title>
+</head>
+<body>
+	<th:block th:include="/menu"></th:block> 
+	    <header>
+        <nav>
+            <div class="brand"><a href=""><i class="fa fa-lock" aria-hidden="true"></i>&nbsp;SafePlace</a></div>
+            <ul>
+                <li><a th:href="@{/index}">Home</a></li>
+                <li><a th:href="@{/login}">Login</a></li>
+                <li><a th:href="@{/register}">SignUp</a></li>
+                <li><a th:href="@{/profile}">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+</body>
+</html>

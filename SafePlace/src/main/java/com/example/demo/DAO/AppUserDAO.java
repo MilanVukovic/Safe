@@ -27,7 +27,7 @@ public class AppUserDAO extends JdbcDaoSupport {
  
     public AppUser findUserAccount(String userName) {
         // Select .. from App_User u Where u.User_Name = ?
-        String sql = AppUserMapper.BASE_SQL + " where u.username = ? ";
+        String sql = AppUserMapper.BASE_SQL + " where u.email = ? ";
  
         Object[] params = new Object[] { userName };
         AppUserMapper mapper = new AppUserMapper();
@@ -49,7 +49,7 @@ public class AppUserDAO extends JdbcDaoSupport {
     	{
     		AppUser benutzer =new AppUser();
     		benutzer.setIduser((Long) zeile.get("iduser"));
-    		benutzer.setUsername((String) zeile.get("username"));
+    		benutzer.setUsername((String) zeile.get("email"));
     		benutzer.setEncrytedPassword((String) zeile.get("passwort"));
     		userList.add(benutzer);
     	}

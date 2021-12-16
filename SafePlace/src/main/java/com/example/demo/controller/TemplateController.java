@@ -34,5 +34,10 @@ public class TemplateController {
 	public String password()
 	{
 		return "password.html";
+	}	
+	@GetMapping ("/editprofile")
+	public String editprofile()
+	{
+		return "editprofile.html";
 	}
 }

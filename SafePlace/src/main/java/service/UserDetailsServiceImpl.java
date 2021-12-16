@@ -1,11 +1,11 @@
-package wartungsplan.service;
+package service;
  
 import java.util.ArrayList;
 import java.util.List;
  
-import wartungsplan.dao.AppUserDAO;
-import wartungsplan.dao.AppRoleDAO;
-import wartungsplan.model.AppUser;
+import com.example.demo.DAO.AppUserDAO;
+import com.example.demo.DAO.AppRoleDAO;
+import com.example.model.AppUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -94,24 +94,24 @@
 </head>
 <body style="background-color: #678271;">
 <div class="signup-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form method="post" th:action="@{/process_register}" th:object="${user}">
 		<h2>Sign Up</h2>
 		<p>Please fill in this form to create an account!</p>
 		<hr>
         <div class="form-group">
 			<div class="row">
-				<div class="col-xs-6"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
-				<div class="col-xs-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
+				<div class="col-xs-6"><input type="text" class="form-control" th:field="*{firstName}" name="firstName" placeholder="First Name" required="required"></div>
+				<div class="col-xs-6"><input type="text" class="form-control" th:field="*{lastName}" name="lastName" placeholder="Last Name" required="required"></div>
 			</div>        	
         </div>
         <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        	<input type="email" class="form-control" th:field="*{email}" name="email" placeholder="Email" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            <input type="password" class="form-control" th:field="*{password}" name="password" placeholder="Password" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+            <input type="password" class="form-control" th:field="*{confirmPassword}" name="confirmPassword" placeholder="Confirm Password" required="required">
         </div>        
 		<div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>

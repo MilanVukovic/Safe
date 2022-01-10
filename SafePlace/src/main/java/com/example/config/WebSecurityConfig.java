@@ -36,36 +36,22 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  
     @Override
     protected void configure(HttpSecurity http) throws Exception {
- 
-        http.csrf().disable();
-        
-        
-        // The pages does not require login
-        http.authorizeRequests().antMatchers("/", "/login", "/logout", "/register").permitAll();
- 
-        // /userInfo page requires login as ROLE_USER or ROLE_ADMIN.
-        // If no login, it will redirect to /login page.
-        http.authorizeRequests().antMatchers("/userInfo", "/devices", "/task", "/place", "/calendar").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
- 
-        // For ADMIN only.
-        http.authorizeRequests().antMatchers("/admin").access("hasRole('ROLE_ADMIN')");
- 
-        // When the user has logged in as XX.
-        // But access a page that requires role YY,
-        // AccessDeniedException will be thrown.
-        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
- 
-        // Config for Login Form
-        http.authorizeRequests().and().formLogin()//
-                // Submit URL of login page.
-                .loginProcessingUrl("/j_spring_security_check") // Submit URL
-                .loginPage("/login")//
-                .defaultSuccessUrl("/userAccountInfo")//
-                .failureUrl("/login?error=true")//
-                .usernameParameter("username")//
+    	http.authorizeRequests()
+        .antMatchers("/password").authenticated()
+        .anyRequest().permitAll()
+        .and()
+            .formLogin()
+            	.loginPage("/login")
+                .usernameParameter("email")
                 .passwordParameter("password")
-                // Config for Logout Page
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/logoutSuccessful");
- 
+                .loginProcessingUrl("/doLogin")
+                .defaultSuccessUrl("/passwordPage")
+                .failureUrl("/login?error=true")
+                .permitAll()
+        .and()
+        	.logout()
+        		.logoutUrl("/doLogout")
+        		.deleteCookies("SESSIONID")
+        		.logoutSuccessUrl("/").permitAll();
     }
 }

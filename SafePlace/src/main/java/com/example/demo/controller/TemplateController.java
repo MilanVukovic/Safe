@@ -1,41 +1,54 @@
 package com.example.demo.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.model.User;
 
 @Controller 
 public class TemplateController {
 	
-	@GetMapping("/index")
+	@RequestMapping("/index")
+    public String viewHomePage(Model model) {
+    	model.addAttribute("user", new User());
+        return "index";
+    }
 	
-	public String index()
-	{
-		return "index.html";
-	}
-	@GetMapping("/login")
-	
+	@RequestMapping("/login")
 	public String login()
 	{
 		return "login.html";
 	}
-	@GetMapping("/profile")
 	
+	@PostMapping("/login_success_handler")
+    public String loginSuccessHandler() {
+        System.out.println("Logging user login success...");
+ 
+        return "index";
+    } 
+	
+	@RequestMapping("/profile")
 	public String profile()
 	{
 		return "profile.html";
 	}
-	@GetMapping("/register")
 	
+	@RequestMapping("/register")
 	public String register()
 	{
 		return "register.html";
 	}
-	@GetMapping ("/password")
+	
+	@RequestMapping("/passwordPage")
 	public String password()
 	{
-		return "password.html";
-	}	
-	@GetMapping ("/editprofile")
+		return "passwordPage.html";
+	}
+	
+	@RequestMapping("/editprofile")
 	public String editprofile()
 	{
 		return "editprofile.html";

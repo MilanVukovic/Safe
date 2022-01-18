@@ -67,4 +67,12 @@ public class TemplateController {
     {
         return "editprofile.html";
     }
+    
+    @RequestMapping("/settings")
+    public String settings()
+    {
+        return "settings.html";
+    }
+    
+    
 }

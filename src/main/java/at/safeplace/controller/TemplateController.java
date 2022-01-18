@@ -21,7 +21,13 @@ public class TemplateController {
         model.addAttribute("user", new User());
         return "index";
     }
-
+    
+    @RequestMapping("/index")
+    public String index()
+    {
+        return "index.html";
+    }
+    
     @RequestMapping("/login")
     public String login()
     {

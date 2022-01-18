@@ -19,7 +19,7 @@ public class TemplateController {
     @RequestMapping("/")
     public String viewHomePage(Model model) {
         model.addAttribute("user", new User());
-        return "index";
+        return "login";
     }
     
     @RequestMapping("/index")
@@ -53,7 +53,7 @@ public class TemplateController {
     public String processRegister(User user, HttpServletRequest request) {
         service.register(user);
 
-        return "register_success";
+        return "index";
     }
 
     @RequestMapping("/passwordPage")

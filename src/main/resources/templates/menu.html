@@ -13,11 +13,12 @@
       
       	<li  class="nav-item"><a href="/login" class="nav-link" >Login</a></li>
 		<li  class="nav-item"><a th:href="@{/register}" class="nav-link" >SignUp</a></li>
-        <li class="nav-item active"><a class="nav-link" th:href="@{/}">Home</a></li>
+        <li class="nav-item active"><a class="nav-link" th:href="@{/index}">Home</a></li>
         <li class="nav-item"><a th:if="${#request.userPrincipal == null}" class="nav-link" th:href="@{/index}">Index</a> </li>
 		<li  class="nav-item"><a th:href="@{/profile}" class="nav-link" >Profile</a></li>
 		<li  class="nav-item"><a th:href="@{/settings}" class="nav-link" >Settings</a></li>
-		
+		<li  class="nav-item"><a th:href="@{/passwordPage}" class="nav-link" >MyPasswords</a></li>
+		<li  class="nav-item"><a th:href="@{/friends}" class="nav-link" >Friends</a></li>
       </ul>
     </div>
   </nav>

@@ -72,7 +72,12 @@ public class TemplateController {
     public String settings()
     {
         return "settings.html";
-    }
+    }   
     
+    @RequestMapping("/friends")
+    public String friends()
+    {
+        return "friends.html";
+    }  
     
 }

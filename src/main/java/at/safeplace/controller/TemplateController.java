@@ -80,4 +80,10 @@ public class TemplateController {
         return "friends.html";
     }  
     
+    @RequestMapping("/friendspassword")
+    public String friendspassword()
+    {
+        return "friendspassword.html";
+    } 
+    
 }
